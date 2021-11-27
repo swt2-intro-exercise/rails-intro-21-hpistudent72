@@ -1,4 +1,12 @@
 class AuthorsController < ApplicationController
+    def index
+        @authors = Author.all
+    end
+
+    def show
+        @author = Author.find(params[:id])
+    end
+
     def new
     end
 
@@ -9,9 +17,7 @@ class AuthorsController < ApplicationController
         redirect_to @author #root_path, notice: 'Success!' #@authors 
     end
 
-    def show
-        @author = Author.find(params[:id])
-    end
+    
    
   private
     def author_params
