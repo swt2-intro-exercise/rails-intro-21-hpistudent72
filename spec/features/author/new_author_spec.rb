@@ -20,6 +20,10 @@ describe "New author page", type: :feature do
     page.fill_in 'author[last_name]', with: 'Turing'
     page.fill_in 'author[homepage]', with: 'http://wikipedia.de/Alan_Turing'
     find('input[type="submit"]').click
+    #get author from database
+    #expect(@author.first_name).to eq('Alan')
+    #expect(@author.last_name).to eq('Turing')
+    #expect(@author.homepage).to eq('http://wikipedia.de/Alan_Turing')
   end
 
   it "should show an error message if no last name was entered" do
