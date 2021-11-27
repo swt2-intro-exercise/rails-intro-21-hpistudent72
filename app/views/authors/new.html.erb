@@ -1,11 +1,11 @@
 <h1>Ich kann ja auch was anderes schreiben</h1>
 
-<%= form_with scope: :author, local: true do |form| %>
+<%= form_with scope: :author, url: authors_path, local: true do |form| %>
     <p>
       <%= form.label :'First name' %><br>
       <%= form.text_field :first_name%>
     </p>
-   
+
     <p>
       <%= form.label :'Last name' %><br>
       <%= form.text_area :last_name %>
@@ -15,8 +15,8 @@
       <%= form.label :Homepage %><br>
       <%= form.text_area :homepage %>
     </p>
-   
+
     <p>
       <%= form.submit %>
     </p>
-  <% end %>
+  <% end %> 
