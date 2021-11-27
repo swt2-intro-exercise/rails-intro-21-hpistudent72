@@ -1,1 +1,22 @@
 <h1>Ich kann ja auch was anderes schreiben</h1>
+
+<%= form_with scope: :author, local: true do |form| %>
+    <p>
+      <%= form.label :'First name' %><br>
+      <%= form.text_field :first_name%>
+    </p>
+   
+    <p>
+      <%= form.label :'Last name' %><br>
+      <%= form.text_area :last_name %>
+    </p>
+
+    <p>
+      <%= form.label :Homepage %><br>
+      <%= form.text_area :homepage %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
