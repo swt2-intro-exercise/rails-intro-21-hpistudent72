@@ -1,6 +1,7 @@
 describe "Show Author Page", type:  :feature do
     it "should show alans page" do
-        visit author_path(@alan)
-        expect(page).to have_text('')
+        FactoryBot.create :author
+        visit author_path(1)
+        expect(page).to have_text('First Name')
     end
 end
