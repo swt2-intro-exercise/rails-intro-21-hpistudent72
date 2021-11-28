@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "Edit Author Page", type:  :feature do
     it "should exist" do
         FactoryBot.create :author

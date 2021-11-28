@@ -38,6 +38,8 @@ describe "New author page", type: :feature do
     # Test for 'New author page should save the author' exercise issue,
     # https://github.com/swt2-intro-exercise/rails-intro-21-hpistudent72/issues/16
 
+    expect(Author.where(last_name: 'Turing').count).to eq(0)
+
     # When a user visits the new author page
     visit new_author_path    
     # And fills in 'Alan', 'Turing', and 'http://wikipedia.org/Alan_Turing', respectively
@@ -54,5 +56,4 @@ describe "New author page", type: :feature do
     # Then Alan Turing's first name should be 'Alan'
     expect(alan.first_name).to eq('Alan')
   end
-
 end
