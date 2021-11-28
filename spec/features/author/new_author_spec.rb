@@ -33,4 +33,26 @@ describe "New author page", type: :feature do
     find('input[type="submit"]').click
     expect(page).to have_text('error')
   end
+
+  it "should save the author" do
+    # Test for 'New author page should save the author' exercise issue,
+    # https://github.com/swt2-intro-exercise/rails-intro-21-hpistudent72/issues/16
+
+    # When a user visits the new author page
+    visit new_author_path    
+    # And fills in 'Alan', 'Turing', and 'http://wikipedia.org/Alan_Turing', respectively
+    fill_in "author[first_name]", with: 'Alan'
+    fill_in "author[last_name]", with: 'Turing'
+    fill_in "author[homepage]", with: 'http://wikipedia.org/Alan_Turing'
+    # And submits the form
+    find('input[type="submit"]').click
+
+    # Then Alan Turing should be found in the database
+    alan = Author.find_by!(last_name: 'Turing')
+    expect(alan).to_not be_nil
+
+    # Then Alan Turing's first name should be 'Alan'
+    expect(alan.first_name).to eq('Alan')
+  end
+
 end
