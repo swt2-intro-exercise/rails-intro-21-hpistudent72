@@ -27,7 +27,7 @@ jobs:
           yarn install
       - name: Run local RSpec tests
         run: |
-          rails db:test:prepare
+          bundle exec rails db:test:prepare
           bundle exec rspec spec/
       - name: Run exercise automation
         run: |
